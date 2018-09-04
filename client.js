@@ -10,7 +10,11 @@ function onReady() {
   $('#submitButton').on('click', submitData);
   $('#tableBody').on('click', '.deleteButton', handleDelete);
 
+
+
+
 }
+
 
 
 function submitData() {
@@ -39,7 +43,7 @@ function submitData() {
 
   $('#title').val('');
 
-  let salary = $('#annualSalary').val();
+  let salary = Number($('#annualSalary').val());
 
   salaries.push(salary);
 
@@ -58,6 +62,8 @@ function submitData() {
     <td>` + id + `</td>
     <td>` + title + `</td>
     <td>` + salary + `</td>
+    <td><button class="deleteButton">Delete</button></td>
+
 
 
 
@@ -71,7 +77,7 @@ function submitData() {
 
 
       if (salaries[i]) {
-        result += salary[i];
+        result += salaries[i];
 
 
 
@@ -81,18 +87,27 @@ function submitData() {
     // result = parseFloat(result)
 
     result = (result /12);
-    
+
     result = result.toFixed(2);
 
     $('#totalMonthly').html('$' + result);
 
+if (result > 20000){
+h2mouseEnter();
+}
 
 
+}
 
-  }
+
 
   function handleDelete(){
-    $(this).parent().remove();
+    $(this).parent().parent().remove();
 
 
   }
+
+  function h2mouseEnter(){
+  $( "h2" ).css( 'background-color', 'red');
+
+}
