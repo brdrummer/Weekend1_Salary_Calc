@@ -1,0 +1,17 @@
+th{
+   border: 10px solid grey;
+}
+
+table, tr, td{
+  border: 1px solid black;
+}
+
+body{
+  border: 1px solid black;
+}
+
+h1{
+
+
+  border: 1px solid black;
+}
